@@ -21,7 +21,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "warscodev"
 description              : "warscodev의 개발 블로그입니다."
-url                      : "https://warscodev.github.io/"
+url                      : "https://warscodev.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "warscodev/warscodev.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
