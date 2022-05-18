@@ -14,5 +14,7 @@
 docs:
   - title: "Computer Science"
     url: /categories/computer-science/
+  - title: "Spring Data"
+    url: /categories/spring-data/
   - title: "Etc."
     url: /categories/etc/
