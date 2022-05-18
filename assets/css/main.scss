@@ -6,3 +6,23 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+
+
+.archive__item-title-custom > a{
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.sidebar>*{
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+}
+
+.author__urls{
+    font-size: 18px;
+}
+
+.nav__sub-title{
+    font-weight: 400;
+}
