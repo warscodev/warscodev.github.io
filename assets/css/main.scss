@@ -8,10 +8,7 @@
 @import "minimal-mistakes"; // main partials
 
 
-.archive .page__title{
-}
-
-.archive__item-title-custom > a{
+.archive__item-title-custom > a, .archive__item-title > a{
     font-weight: 400;
     text-decoration: none;
 }
