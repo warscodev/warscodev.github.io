@@ -7,9 +7,12 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-
 /* 아카이브-아이템 */
-.archive__item-title-custom > a, .archive__item-title > a{
+.archive__item-title{
+    margin-top: 2em !important;
+}
+
+.archive__item-title > a{
     font-weight: 400;
     text-decoration: none;
 }
@@ -34,5 +37,9 @@
 
 /* 포스트 */
 .page__meta, .comment__date{
-    color: #777;
+    color: #8d9599;
+}
+
+.page__title a{
+    letter-spacing: -1px;
 }
