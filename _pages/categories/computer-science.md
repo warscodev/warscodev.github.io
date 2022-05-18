@@ -1,6 +1,6 @@
 ---
 title: "Computer Science"
-layout: archive
+layout: archive-category
 permalink: categories/computer-science
 author_profile: true
 sidebar:

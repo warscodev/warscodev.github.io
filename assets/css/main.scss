@@ -8,12 +8,15 @@
 @import "minimal-mistakes"; // main partials
 
 
+.archive .page__title{
+}
 
 .archive__item-title-custom > a{
     font-weight: 400;
     text-decoration: none;
 }
 
+/* 사이드 바 시작 */
 .sidebar>*{
     margin-top: 1.2em;
     margin-bottom: 1.2em;
@@ -25,4 +28,6 @@
 
 .nav__sub-title{
     font-weight: 400;
+    text-transform: none;
 }
+/* 사이드 바 끝 */
