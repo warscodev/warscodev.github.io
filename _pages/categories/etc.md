@@ -1,7 +1,7 @@
 ---
 title: "Etc."
 layout: archive-category
-permalink: categories/etc/
+permalink: categories/etc
 author_profile: true
 sidebar:
     nav: "docs"    
@@ -9,4 +9,4 @@ sidebar:
 
 {% assign posts = site.categories.Etc %}
 {% assign index = site.categories.Etc.index %}
-{% for post in posts %} {% include archive-single-custom.html type=page.entries_layout %} {% endfor %}
+{% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
