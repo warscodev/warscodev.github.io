@@ -8,6 +8,7 @@
 @import "minimal-mistakes"; // main partials
 
 
+/* 아카이브-아이템 */
 .archive__item-title-custom > a, .archive__item-title > a{
     font-weight: 400;
     text-decoration: none;
@@ -24,7 +25,14 @@
 }
 
 .nav__sub-title{
+    font-size: .875em;
     font-weight: 400;
     text-transform: none;
 }
 /* 사이드 바 끝 */
+
+
+/* 포스트 */
+.page__meta, .comment__date{
+    color: #777;
+}
