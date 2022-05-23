@@ -16,6 +16,8 @@ docs:
     url: /categories/computer-science/
   - title: "Algorithm"
     url: /categories/algorithm/
+  - title: "Data Structure"
+    url: /categories/data-structure/
   - title: "Spring Data"
     url: /categories/spring-data/
   - title: "Etc."

@@ -1,6 +1,6 @@
 ---
 title: "스택(Stack)과 큐(Queue)"
-categories: Computer-Science
+categories: [Data Structure]
 tags: [Stack, Queue]
 ---
 

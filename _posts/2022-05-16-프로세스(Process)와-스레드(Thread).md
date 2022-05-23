@@ -1,6 +1,6 @@
 ---
 title : "프로세스(Process)와 스레드(Thread)"
-categories : Computer-Science
+categories : [Computer Science]
 tag : [Process, Thread]
 ---
 

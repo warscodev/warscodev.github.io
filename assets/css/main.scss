@@ -8,18 +8,38 @@
 @import "minimal-mistakes"; // main partials
 
 
+/*a{
+    color: #20B2AA;
+}
+
+a:hover{
+    color: #167F79;
+}*/
+
 .h1, h2, h3, h4, h5, h6, strong{
     font-weight: 600;
 }
 
 /* 아카이브-아이템 */
+.list__item:hover .archive__item-title>a{
+    text-decoration: underline;
+}
+
+.archive__item-category{
+    font-size: .7em;
+    font-weight: 500;
+    margin-top: 3em;
+    margin-bottom: .25em;
+    color: #2f7d95;
+}
 .archive__item-title{
-    margin-top: 2em !important;
+    margin-top: 0 !important;
 }
 
 .archive__item-title > a{
-    font-weight: 400;
     text-decoration: none;
+    font-weight: bold;
+    color: #3d4144;
 }
 
 /* 사이드 바 시작 */
