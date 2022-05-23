@@ -7,6 +7,11 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+
+.h1, h2, h3, h4, h5, h6, strong{
+    font-weight: 600;
+}
+
 /* 아카이브-아이템 */
 .archive__item-title{
     margin-top: 2em !important;
@@ -36,10 +41,39 @@
 
 
 /* 포스트 */
+.page__category{
+    text-decoration: none;
+    margin-bottom: .5em;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.page__inner-wrap header{
+    text-align: center;
+}
+
+.page__title{
+    margin-top: .188em;
+    line-height: 1.2;
+}
+
+.page__title a{
+    font-size: 1.5em;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
 .page__meta, .comment__date{
     color: #8d9599;
 }
 
-.page__title a{
-    letter-spacing: -1px;
+.page__title+.page__meta{
+    margin-top: .25em;
+}
+
+
+/* Taxonomy */
+.page__taxonomy-item{
+    border-radius: 15px;
+    border-color: #d9dade;
 }
