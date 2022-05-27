@@ -70,6 +70,7 @@ a:hover{
 
 .page__inner-wrap header{
     text-align: center;
+    margin-bottom: 6.5em;
 }
 
 .page__title{
@@ -83,7 +84,7 @@ a:hover{
     font-weight: bold;
 }
 
-.page__meta, .comment__date{
+.page__inner-wrap .page__meta{
     color: #8d9599;
 }
 
