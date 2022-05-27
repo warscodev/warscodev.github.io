@@ -20,5 +20,7 @@ docs:
     url: /categories/data-structure/
   - title: "Spring Data"
     url: /categories/spring-data/
+  - title: "Template Engine"
+    url: /categories/template-engine/
   - title: "Etc."
     url: /categories/etc/
