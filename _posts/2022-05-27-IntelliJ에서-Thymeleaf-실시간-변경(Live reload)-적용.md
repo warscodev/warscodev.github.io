@@ -6,6 +6,8 @@ tags: [Thymeleaf, IntelliJ]
 
 서버를 재구동 하지 않고 Thymeleaf의 변경사항을 실시간으로 적용하는 방법을 알아보자.
 
+<br>
+
 # 1. application.yml 파일 thymeleaf 설정
 
 ```groovy
@@ -30,7 +32,7 @@ spring
 
 <br>
 
-**정상적으로 적용된 모습**
+## **정상적으로 적용된 모습**
 
 <img src="/images/May-27-2022 14-20-42.gif" alt="이미지4">
 
