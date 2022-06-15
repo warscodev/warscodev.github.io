@@ -18,6 +18,8 @@ docs:
     url: /categories/algorithm/
   - title: "Data Structure"
     url: /categories/data-structure/
+  - title: "Server"
+    url: /categories/server/
   - title: "Spring Data"
     url: /categories/spring-data/
   - title: "Template Engine"
