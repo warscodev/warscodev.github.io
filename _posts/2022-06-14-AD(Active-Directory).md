@@ -3,7 +3,6 @@ title: "AD(Active Directory)"
 categories: [Server]
 tags: [AD]
 ---
-# Active Directory
 
 중앙 서버에 공통된 데이터베이스를 생성하여 각 서버와 클라이언트가 해당 데이터베이스를 공유하여 Object를 검색하고,
 
@@ -20,6 +19,8 @@ tags: [AD]
 ### 2. 트리(Tree), 포레스트(Forest)
 
 트리는 도메인의 결합, 포레스트는 트리의 결합니다.
+
+<br>
 
 
 
