@@ -108,7 +108,6 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
-  jekyll
   jekyll-toc
   kramdown-parser-gfm
   minimal-mistakes-jekyll!
