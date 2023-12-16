@@ -1,6 +1,6 @@
 ---
 layout: default
-classes: wide
+<!--classes: wide-->
 ---
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
@@ -39,7 +39,8 @@ classes: wide
                 {% if site.category_archive.path %}
                 {% assign categories_sorted = page.categories | sort_natural %}
                 {% for category_word in categories_sorted %}
-                <a href="{{ category_word | slugify | prepend: site.category_archive.path | relative_url }}" class="page__category">{{ category_word }}</a>
+                <!--<a href="{{ category_word | slugify | prepend: site.category_archive.path | relative_url }}" class="page__category">{{ category_word }}</a>-->
+                <a href="{{ category_word | slugify | relative_url }}" class="page__category">{{ category_word }}</a>
                 {% endfor %}
                 {% endif %}
 

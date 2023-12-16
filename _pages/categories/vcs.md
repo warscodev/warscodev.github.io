@@ -1,11 +1,11 @@
 ---
-title: "Server"
+title: "VCS"
 layout: archive-category
-permalink: server/
+permalink: vcs/
 author_profile: true
 sidebar:
     nav: "docs"    
 ---
 
-{% assign posts = site.categories.Server %}
+{% assign posts = site.categories.VCS %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}

@@ -1,7 +1,7 @@
 ---
 title: "Etc."
 layout: archive-category
-permalink: categories/etc/
+permalink: etc/
 author_profile: true
 sidebar:
     nav: "docs"    

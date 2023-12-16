@@ -1,7 +1,7 @@
 ---
 title: "Spring Data"
 layout: archive-category
-permalink: categories/spring-data/
+permalink: spring-data/
 author_profile: true
 sidebar:
     nav: "docs"    

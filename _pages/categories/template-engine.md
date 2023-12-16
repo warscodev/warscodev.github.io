@@ -1,7 +1,7 @@
 ---
 title: "Template Engine"
 layout: archive-category
-permalink: categories/template-engine/
+permalink: template-engine/
 author_profile: true
 sidebar:
     nav: "docs"

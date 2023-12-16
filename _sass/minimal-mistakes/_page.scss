@@ -14,7 +14,11 @@
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
 
-  @include breakpoint($x-large) {
+  /* 2023-12-11 넓은 화면을 위해 변경 */
+  /*@include breakpoint($x-large) {
+    max-width: $max-width;
+  }*/
+  @include breakpoint($xxx-large) {
     max-width: $max-width;
   }
 }
