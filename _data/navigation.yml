@@ -1,0 +1,31 @@
+# main links
+main:
+  - title: "Category"
+    url: /categories
+#  - title: "About"
+#    url: https://mmistakes.github.io/minimal-mistakes/about/
+#  - title: "Sample Posts"
+#    url: /year-archive/
+#  - title: "Sample Collections"
+#    url: /collection-archive/
+#  - title: "Sitemap"
+#    url: /sitemap/
+
+docs:
+  - title: "Computer Science"
+    url: /computer-science/
+  - title: "Algorithm"
+    url: /algorithm/
+  - title: "Data Structure"
+    url: /data-structure/
+  - title: "Server"
+    url: /server/
+  - title: "VCS"
+    url: /vcs/
+
+  - title: "Spring Data"
+    url: /spring-data
+  - title: "Template Engine"
+    url: /template-engine/
+  - title: "Etc."
+    url: /etc/
