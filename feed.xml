@@ -1,4 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://warscodev.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://warscodev.github.io/" rel="alternate" type="text/html" /><updated>2024-01-09T11:21:43+09:00</updated><id>https://warscodev.github.io/feed.xml</id><title type="html">WarscoDev의 개발 블로그</title><subtitle>warscodev의 개발 블로그입니다.</subtitle><author><name>warscodev</name><email>warscodev@gmail.com</email></author><entry><title type="html">[Git] 1. 설치 및 세팅</title><link href="https://warscodev.github.io/vcs/git-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%B8%ED%8C%85" rel="alternate" type="text/html" title="[Git] 1. 설치 및 세팅" /><published>2023-05-25T00:00:00+09:00</published><updated>2023-05-25T00:00:00+09:00</updated><id>https://warscodev.github.io/vcs/Git-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%B8%ED%8C%85</id><content type="html" xml:base="https://warscodev.github.io/vcs/git-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%B8%ED%8C%85"><![CDATA[<blockquote>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://warscodev.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://warscodev.github.io/" rel="alternate" type="text/html" /><updated>2024-01-09T13:22:45+09:00</updated><id>https://warscodev.github.io/feed.xml</id><title type="html">WarscoDev의 개발 블로그</title><subtitle>warscodev의 개발 블로그입니다.</subtitle><author><name>warscodev</name><email>warscodev@gmail.com</email></author><entry><title type="html">[Git] 2. Git 최초 설정 및 프로젝트 세팅</title><link href="https://warscodev.github.io/vcs/git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95-%EB%B0%8F-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B8%ED%8C%85" rel="alternate" type="text/html" title="[Git] 2. Git 최초 설정 및 프로젝트 세팅" /><published>2023-05-25T00:00:00+09:00</published><updated>2023-05-25T00:00:00+09:00</updated><id>https://warscodev.github.io/vcs/Git%20%EC%B5%9C%EC%B4%88%20%EC%84%A4%EC%A0%95%20%EB%B0%8F%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%84%B8%ED%8C%85</id><content type="html" xml:base="https://warscodev.github.io/vcs/git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95-%EB%B0%8F-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B8%ED%8C%85"><![CDATA[<p><br /></p>
+
+<h1 id="1-git-전역-설정">1. Git 전역 설정</h1>
+<hr />
+<h2 id="11-사용자-이름-및-이메일-주소-설정">1.1 사용자 이름 및 이메일 주소 설정</h2>
+
+<ul>
+  <li>
+    <p>터미널에서 아래 명령어 실행</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git config <span class="nt">--global</span> user.name <span class="s2">"(본인 이름)"</span>
+    
+  git config <span class="nt">--global</span> user.email <span class="s2">"(본인 이메일)"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>아래 명령어로 확인 가능</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git config <span class="nt">--global</span> user.name
+    
+  git config <span class="nt">--global</span> user.email
+</code></pre></div>    </div>
+
+    <p><img src="/images/Git-최초-설정-및-프로젝트-세팅/Untitled.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<h2 id="12-기본-브랜치명-설정">1.2. 기본 브랜치명 설정</h2>
+
+<ul>
+  <li>
+    <p>아래 명령어로 기본 브랜치명을 ‘main’으로 설정</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git config <span class="nt">--global</span> init.defaultBranch main
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>아래 명령어로 기본 브랜치명 확인</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git config <span class="nt">--get</span> init.defaultBranch
+</code></pre></div>    </div>
+
+    <p><img src="/images/Git-최초-설정-및-프로젝트-세팅/Untitled 1.png" alt="Untitled" /></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="2-프로젝트-생성--git-관리-시작">2. 프로젝트 생성 &amp; Git 관리 시작</h1>
+
+<h2 id="21-git-저장소-생성">2.1. Git 저장소 생성</h2>
+
+<ul>
+  <li>
+    <p>프로젝트 경로 아래에서 아래 명령어 입력</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git init
+</code></pre></div>    </div>
+
+    <p><img src="/images/Git-최초-설정-및-프로젝트-세팅/Untitled 2.png" alt="Untitled" /></p>
+
+    <p><img src="/images/Git-최초-설정-및-프로젝트-세팅/Untitled 3.png" alt="폴더에 숨김모드로 .git 폴더 생성 확인" /></p>
+
+    <p>폴더에 숨김모드로 .git 폴더 생성 확인</p>
+
+    <ul>
+      <li>맥에서 숨김 파일 보기: <code class="language-plaintext highlighter-rouge">command</code> + <code class="language-plaintext highlighter-rouge">shift</code> + <code class="language-plaintext highlighter-rouge">.</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="22-git-저장소-상태">2.2. Git 저장소 상태</h2>
+
+<ul>
+  <li>
+    <p>프로젝트에 아래 파일 생성</p>
+
+    <p><img src="/images/Git-최초-설정-및-프로젝트-세팅/Untitled 4.png" alt="Untitled" /></p>
+  </li>
+  <li>
+    <p>프로젝트 경로 아래에서 아래 명령어 입력</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  git status
+</code></pre></div>    </div>
+
+    <p><img src="/images/Git-최초-설정-및-프로젝트-세팅/Untitled 5.png" alt="Untitled" /></p>
+  </li>
+</ul>]]></content><author><name>warscodev</name><email>warscodev@gmail.com</email></author><category term="VCS" /><category term="Git" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">[Git] 1. 설치 및 세팅</title><link href="https://warscodev.github.io/vcs/git-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%B8%ED%8C%85" rel="alternate" type="text/html" title="[Git] 1. 설치 및 세팅" /><published>2023-05-25T00:00:00+09:00</published><updated>2023-05-25T00:00:00+09:00</updated><id>https://warscodev.github.io/vcs/Git-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%B8%ED%8C%85</id><content type="html" xml:base="https://warscodev.github.io/vcs/git-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%B8%ED%8C%85"><![CDATA[<blockquote>
   <p>💡 <strong>Git, Git Bash, SourceTree 설치 및 세팅</strong></p>
 </blockquote>
 

@@ -35,6 +35,12 @@ var store = [{
         "url": "/server/ad-active-directory",
         "teaser": null
       },{
+        "title": "[Git] 2. Git 최초 설정 및 프로젝트 세팅",
+        "excerpt":"    1. Git 전역 설정   1.1 사용자 이름 및 이메일 주소 설정           터미널에서 아래 명령어 실행         git config --global user.name \"(본인 이름)\"        git config --global user.email \"(본인 이메일)\"                아래 명령어로 확인 가능         git config --global user.name        git config --global user.email                  1.2. 기본 브랜치명 설정           아래 명령어로 기본 브랜치명을 ‘main’으로 설정         git config --global init.defaultBranch main                아래 명령어로 기본 브랜치명 확인         git config --get init.defaultBranch                      2. 프로젝트 생성 &amp; Git 관리 시작   2.1. Git 저장소 생성           프로젝트 경로 아래에서 아래 명령어 입력         git init                         폴더에 숨김모드로 .git 폴더 생성 확인              맥에서 숨김 파일 보기: command + shift + .           2.2. Git 저장소 상태           프로젝트에 아래 파일 생성                   프로젝트 경로 아래에서 아래 명령어 입력         git status                 ","categories": ["VCS"],
+        "tags": ["Git"],
+        "url": "/vcs/git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95-%EB%B0%8F-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B8%ED%8C%85",
+        "teaser": null
+      },{
         "title": "[Git] 1. 설치 및 세팅",
         "excerpt":"   💡 Git, Git Bash, SourceTree 설치 및 세팅             1. 다운로드와 설치   1.1. Git과 Git Bash설치     https://git-scm.com/ 에서 다운로드        Git Bash도 함께 설치할 것!                   설치 후 Git Bash에서 테스트         git --version                       아래 명령어로 OS별 개행문자 통일 [참고]         git config --global core.autocrlf true                      1.2. SourceTree 설치      https://www.sourcetreeapp.com/   BitBucket, Mercurial 건너 뛰기       1.3. 인텔리제이 터미널 기본설정을 Git Bash로 변경      Setting → Tools → Terminal        Shell path에 아래 경로 입력         \"C:\\Program Files\\Git\\bin\\sh.exe(shell이 설치된 경로)\" -login -i                       인텔리제이 재시작 후 터미널 확인             ","categories": ["VCS"],
         "tags": ["Git"],
