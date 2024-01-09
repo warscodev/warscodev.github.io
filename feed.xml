@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://warscodev.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://warscodev.github.io/" rel="alternate" type="text/html" /><updated>2024-01-09T14:25:59+09:00</updated><id>https://warscodev.github.io/feed.xml</id><title type="html">WarscoDev의 개발 블로그</title><subtitle>warscodev의 개발 블로그입니다.</subtitle><author><name>warscodev</name><email>warscodev@gmail.com</email></author><entry><title type="html">동기화와(Synchronization)와 교착상태(Deadlock)</title><link href="https://warscodev.github.io/computer-science/%EB%8F%99%EA%B8%B0%ED%99%94%EC%99%80-synchronization-%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C-deadlock" rel="alternate" type="text/html" title="동기화와(Synchronization)와 교착상태(Deadlock)" /><published>2023-08-29T00:00:00+09:00</published><updated>2023-08-29T00:00:00+09:00</updated><id>https://warscodev.github.io/computer-science/%EB%8F%99%EA%B8%B0%ED%99%94%EC%99%80(Synchronization)-%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C(Deadlock)</id><content type="html" xml:base="https://warscodev.github.io/computer-science/%EB%8F%99%EA%B8%B0%ED%99%94%EC%99%80-synchronization-%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C-deadlock"><![CDATA[<blockquote>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://warscodev.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://warscodev.github.io/" rel="alternate" type="text/html" /><updated>2024-01-09T14:28:54+09:00</updated><id>https://warscodev.github.io/feed.xml</id><title type="html">WarscoDev의 개발 블로그</title><subtitle>warscodev의 개발 블로그입니다.</subtitle><author><name>warscodev</name><email>warscodev@gmail.com</email></author><entry><title type="html">동기화와(Synchronization)와 교착상태(Deadlock)</title><link href="https://warscodev.github.io/computer-science/%EB%8F%99%EA%B8%B0%ED%99%94%EC%99%80-synchronization-%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C-deadlock" rel="alternate" type="text/html" title="동기화와(Synchronization)와 교착상태(Deadlock)" /><published>2023-08-29T00:00:00+09:00</published><updated>2023-08-29T00:00:00+09:00</updated><id>https://warscodev.github.io/computer-science/%EB%8F%99%EA%B8%B0%ED%99%94%EC%99%80(Synchronization)-%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C(Deadlock)</id><content type="html" xml:base="https://warscodev.github.io/computer-science/%EB%8F%99%EA%B8%B0%ED%99%94%EC%99%80-synchronization-%EA%B5%90%EC%B0%A9%EC%83%81%ED%83%9C-deadlock"><![CDATA[<blockquote>
   <p>💡 동기화와 데드락은 공유 자원을 사용하는 프로세스나 스레드 간의 상호 작용에서 중요한 개념들이다. 동기화를 통해 여러 프로세스나 스레드가 공유 자원을 안전하게 접근하도록 도와주지만, 잘못된 동기화는 데드락을 일으킬 수 있다.</p>
 </blockquote>
 
@@ -56,7 +56,7 @@
 
 <p>동기화는 복잡한 환경에서 여러 프로세스나 스레드가 원활하게 작동하도록 하는 중요한 개념이다. 잘못된 동기화는 시스템 성능 저하나 데이터 손실과 같은 큰 문제를 일으킬 수 있다.</p>
 
-<p><br /><br /></p>
+<p><br /></p>
 
 <h1 id="-교착상태-deadlock">📌 교착상태 (Deadlock)</h1>
 
@@ -147,7 +147,7 @@
 
 <p>각 방법마다 장단점이 있으므로, 시스템의 특성과 요구사항에 따라 적절한 방법을 선택해야 한다.</p>
 
-<p><br /><br /></p>
+<p><br /></p>
 
 <h1 id="-동기화와-데드락"><strong>📌 동기화와 데드락</strong></h1>
 
