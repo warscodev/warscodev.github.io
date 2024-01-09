@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>WarscoDev의 개발 블로그</title>
-<meta name="description" content="warscodev의 개발 블로그입니다.">
+<!-- begin _includes/seo.html --><title>IntelliJ에서 Thymeleaf 실시간 변경(Live reload) 적용하기 - WarscoDev의 개발 블로그</title>
+<meta name="description" content="서버를 재구동 하지 않고 Thymeleaf의 변경사항을 실시간으로 적용하는 방법을 알아보자.">
 
 
   <meta name="author" content="warscodev">
   
+  <meta property="article:author" content="warscodev">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="WarscoDev의 개발 블로그">
-<meta property="og:title" content="WarscoDev의 개발 블로그">
-<meta property="og:url" content="https://warscodev.github.io/">
+<meta property="og:title" content="IntelliJ에서 Thymeleaf 실시간 변경(Live reload) 적용하기">
+<meta property="og:url" content="https://warscodev.github.io/template-engine/intellij%EC%97%90%EC%84%9C-thymeleaf-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%B3%80%EA%B2%BD-live-reload-%EC%A0%81%EC%9A%A9">
 
 
-  <meta property="og:description" content="warscodev의 개발 블로그입니다.">
-
-
-
+  <meta property="og:description" content="서버를 재구동 하지 않고 Thymeleaf의 변경사항을 실시간으로 적용하는 방법을 알아보자.">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2022-05-27T00:00:00+09:00">
 
 
 
@@ -41,11 +45,9 @@
   
 
 
-<link rel="canonical" href="https://warscodev.github.io/">
+<link rel="canonical" href="https://warscodev.github.io/template-engine/intellij%EC%97%90%EC%84%9C-thymeleaf-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%B3%80%EA%B2%BD-live-reload-%EC%A0%81%EC%9A%A9">
 
 
-
-  <link rel="next" href="https://warscodev.github.io/page2/">
 
 
 <script type="application/ld+json">
@@ -94,7 +96,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -143,8 +145,45 @@
 
 
 
+
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories#template-engine" itemprop="item"><span itemprop="name">Template engine</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">IntelliJ에서 Thymeleaf 실시간 변경(Live reload) 적용하기</li>
+      
+    
+  </ol>
+</nav>
+
+
+
+
 <div id="main" role="main">
-  
+    
   <div class="sidebar sticky">
   
 
@@ -356,24 +395,189 @@
 
 
 
-  <div class="archive">
+    <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+        
+        <meta itemprop="headline" content="IntelliJ에서 Thymeleaf 실시간 변경(Live reload) 적용하기">
+        
+        
+        <meta itemprop="description"
+              content="서버를 재구동 하지 않고 Thymeleaf의 변경사항을 실시간으로 적용하는 방법을 알아보자.">
+        
+        
+        <meta itemprop="datePublished" content="2022-05-27T00:00:00+09:00">
+        
+        
+
+        <div class="page__inner-wrap">
+            
+            <header>
+                
+                
+                
+                <!--<a href="/categoriestemplate-engine" class="page__category">Template Engine</a>-->
+                <a href="/template-engine" class="page__category">Template Engine</a>
+                
+                
+
+                
+                <h1 id="page-title" class="page__title p-name" itemprop="headline">
+                    <a href="https://warscodev.github.io/template-engine/intellij%EC%97%90%EC%84%9C-thymeleaf-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%B3%80%EA%B2%BD-live-reload-%EC%A0%81%EC%9A%A9" class="u-url" itemprop="url">IntelliJ에서 Thymeleaf 실시간 변경(Live reload) 적용하기
+</a>
+                </h1>
+                
+                
+
+  <p class="page__meta">
     
-      <h1 id="page-title" class="page__title"></h1>
+      
+      <span class="page__meta-date">
+        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
+        
+        <time datetime="2022-05-27T00:00:00+09:00">2022.05.27.</time>
+      </span>
     
+
     
 
-<h3 class="archive__subtitle">최근 포스트</h3>
+    
+  </p>
 
 
+            </header>
+            <hr>
+            
+
+            <section class="page__content e-content" itemprop="text">
+                
+                <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                        <header><h4 class="nav__title"><i class="fas fa-file-alt"></i>
+                            목차</h4></header>
+                        <ul class="toc__menu"><li><a href="#1-applicationyml-파일-thymeleaf-설정">1. application.yml 파일 thymeleaf 설정</a></li><li><a href="#2-인텔리제이">2. 인텔리제이</a><ul><li><a href="#정상적으로-적용된-모습">정상적으로 적용된 모습</a></li></ul></li></ul>
+
+                    </nav>
+                </aside>
+                
+                <p>서버를 재구동 하지 않고 Thymeleaf의 변경사항을 실시간으로 적용하는 방법을 알아보자.</p>
+
+<p><br /></p>
+
+<h1 id="1-applicationyml-파일-thymeleaf-설정">1. application.yml 파일 thymeleaf 설정</h1>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">spring</span>
+    <span class="nl">thymeleaf:</span>
+        <span class="nl">cache:</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="2-인텔리제이">2. 인텔리제이</h1>
+<blockquote>
+  <p><strong>1. Run → Edit Configurations (구성 편집)</strong></p>
+
+  <p><img src="/images/스크린샷 2022-05-27 오후 1.29.17.png" width="520" alt="이미지1" /></p>
+
+  <p><strong>2. On ‘Update’ action(‘Update’ 작업 시) &amp; On frame deactivation(프레임 비활성화 시) → Update classes and resources(클래스 및 리소스 업데이트)</strong></p>
+
+  <p><img src="/images/스크린샷 2022-05-27 오후 1.33.00.png" width="520" alt="이미지2" /></p>
+
+  <p><img src="/images/스크린샷 2022-05-27 오후 1.34.13.png" width="520" alt="이미지3" /></p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="정상적으로-적용된-모습"><strong>정상적으로 적용된 모습</strong></h2>
+
+<p><img src="/images/May-27-2022 14-20-42.gif" alt="이미지4" /></p>
 
 
-<div class="entries-list">
+                
+            </section>
+
+            <footer class="page__meta">
+                
+                
   
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
     
+      <a href="/tags/#intellij" class="page__taxonomy-item p-category" rel="tag">#IntelliJ</a><span class="sep">, </span>
+    
+      <a href="/tags/#thymeleaf" class="page__taxonomy-item p-category" rel="tag">#Thymeleaf</a>
+    
+    </span>
+  </p>
 
 
 
-<div class="list__item">
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <!-- href default : /categories#template-engine -->
+      <a href="/categoriestemplate-engine" class="page__taxonomy-item p-category" rel="tag">Template Engine</a><span></span>
+    
+    </span>
+  </p>
+
+
+                
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-05-27T00:00:00+09:00">2022.05.27.</time></p>
+
+            </footer>
+
+            <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=IntelliJ%EC%97%90%EC%84%9C+Thymeleaf+%EC%8B%A4%EC%8B%9C%EA%B0%84+%EB%B3%80%EA%B2%BD%28Live+reload%29+%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0%20https%3A%2F%2Fwarscodev.github.io%2Ftemplate-engine%2Fintellij%25EC%2597%2590%25EC%2584%259C-thymeleaf-%25EC%258B%25A4%25EC%258B%259C%25EA%25B0%2584-%25EB%25B3%2580%25EA%25B2%25BD-live-reload-%25EC%25A0%2581%25EC%259A%25A9" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwarscodev.github.io%2Ftemplate-engine%2Fintellij%25EC%2597%2590%25EC%2584%259C-thymeleaf-%25EC%258B%25A4%25EC%258B%259C%25EA%25B0%2584-%25EB%25B3%2580%25EA%25B2%25BD-live-reload-%25EC%25A0%2581%25EC%259A%25A9" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+</section>
+
+
+            
+  <nav class="pagination">
+    
+      <a href="/data-structure/linked-list" class="pagination--pager" title="Linked list
+">이전</a>
+    
+    
+      <a href="/server/ad-active-directory" class="pagination--pager" title="AD(Active Directory)
+">다음</a>
+    
+  </nav>
+
+        </div>
+
+        
+    </article>
+
+    
+    
+    <div class="page__related">
+        <h2 class="page__related-title">참고</h2>
+        <div class="grid__wrapper">
+            
+            
+
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
 
     
@@ -417,12 +621,12 @@
   </article>
 </div>
 
-  
-    
+            
+            
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
 
     
@@ -464,59 +668,12 @@
   </article>
 </div>
 
-  
-    
+            
+            
 
 
 
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-
-    
-
-    
-    
-    <!--<a class="archive__item-category" href="/categoriestemplate-engine">Template Engine</a>-->
-    <a class="archive__item-category" href="/template-engine">Template Engine</a>
-    
-    
-
-
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/template-engine/intellij%EC%97%90%EC%84%9C-thymeleaf-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%B3%80%EA%B2%BD-live-reload-%EC%A0%81%EC%9A%A9" rel="permalink">IntelliJ에서 Thymeleaf 실시간 변경(Live reload) 적용하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
-        
-        <time datetime="2022-05-27T00:00:00+09:00">2022.05.27.</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">서버를 재구동 하지 않고 Thymeleaf의 변경사항을 실시간으로 적용하는 방법을 알아보자.
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
 
     
@@ -563,12 +720,12 @@
   </article>
 </div>
 
-  
-    
+            
+            
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
 
     
@@ -610,49 +767,11 @@
   </article>
 </div>
 
-  
-</div>
-
-
-<nav class="pagination">
-  
-  <ul>
+            
+        </div>
+    </div>
     
     
-    <li><a href="#" class="disabled"><span aria-hidden="true">이전</span></a></li>
-    
-
-    
-    
-      <li><a href="#" class="disabled current">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-      <li><a href="/page2/">2</a></li>
-    
-
-    
-    
-      <li><a href="/page2/">다음</a></li>
-    
-  </ul>
-</nav>
-
-
-
-  </div>
 </div>
     </div>
 

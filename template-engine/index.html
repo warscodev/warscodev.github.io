@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>WarscoDev의 개발 블로그</title>
+<!-- begin _includes/seo.html --><title>Template Engine - WarscoDev의 개발 블로그</title>
 <meta name="description" content="warscodev의 개발 블로그입니다.">
 
 
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="WarscoDev의 개발 블로그">
-<meta property="og:title" content="WarscoDev의 개발 블로그">
-<meta property="og:url" content="https://warscodev.github.io/">
+<meta property="og:title" content="Template Engine">
+<meta property="og:url" content="https://warscodev.github.io/template-engine/">
 
 
   <meta property="og:description" content="warscodev의 개발 블로그입니다.">
@@ -41,11 +41,9 @@
   
 
 
-<link rel="canonical" href="https://warscodev.github.io/">
+<link rel="canonical" href="https://warscodev.github.io/template-engine/">
 
 
-
-  <link rel="next" href="https://warscodev.github.io/page2/">
 
 
 <script type="application/ld+json">
@@ -94,7 +92,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--archive-category">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -141,6 +139,33 @@
     <div class="initial-content">
       
 
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Template Engine</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -358,119 +383,13 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title"></h1>
-    
-    
-
-<h3 class="archive__subtitle">최근 포스트</h3>
-
-
-
-
-<div class="entries-list">
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-
-    
-
-    
-    
-    <!--<a class="archive__item-category" href="/categoriesvcs">VCS</a>-->
-    <a class="archive__item-category" href="/vcs">VCS</a>
-    
-    
-
-
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/vcs/git-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%B8%ED%8C%85" rel="permalink">[Git] 1. 설치 및 세팅
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
+    <h1 class="page__title"></h1>
+    <h3 id="page-title" class="archive__subtitle">Template Engine <span></span></h3>
         
-        <time datetime="2023-05-25T00:00:00+09:00">2023.05.25.</time>
-      </span>
     
-
     
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-  💡 Git, Git Bash, SourceTree 설치 및 세팅
-
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
 <div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-
-    
-
-    
-    
-    <!--<a class="archive__item-category" href="/categoriesserver">Server</a>-->
-    <a class="archive__item-category" href="/server">Server</a>
-    
-    
-
-
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/server/ad-active-directory" rel="permalink">AD(Active Directory)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
-        
-        <time datetime="2022-06-14T00:00:00+09:00">2022.06.14.</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">중앙 서버에 공통된 데이터베이스를 생성하여 각 서버와 클라이언트가 해당 데이터베이스를 공유하여 Object를 검색하고,
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="archive__item" itemscope="" itemtype="https://schema.org/CreativeWork">
 
     
 
@@ -510,146 +429,6 @@
 </p>
   </article>
 </div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-
-    
-
-    
-    
-    <!--<a class="archive__item-category" href="/categoriesdata-structure">Data Structure</a>-->
-    <a class="archive__item-category" href="/data-structure">Data Structure</a>
-    
-    
-
-
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/data-structure/linked-list" rel="permalink">Linked list
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
-        
-        <time datetime="2022-05-22T00:00:00+09:00">2022.05.22.</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-  컴퓨터에 자료를 저장하는 구조의 한 종류로, 엘리먼트와 엘리먼트 간의 연결(link)을 이용해서 리스트를 구현한 것이다.
-  데이터를 저장한 노드에 다음 노드의 주소를 가지고 있는 구조.
-  일렬로 연결된 데이터를 저장할 때 사용
-  배열과 차이
-    
-      배열 : ...</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-
-    
-
-    
-    
-    <!--<a class="archive__item-category" href="/categoriesdata-structure">Data Structure</a>-->
-    <a class="archive__item-category" href="/data-structure">Data Structure</a>
-    
-    
-
-
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/data-structure/%EC%8A%A4%ED%83%9D-stack-%EA%B3%BC-%ED%81%90-queue" rel="permalink">스택(Stack)과 큐(Queue)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
-        
-        <time datetime="2022-05-19T00:00:00+09:00">2022.05.19.</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Abstract Data Type &amp; Data Structure
-</p>
-  </article>
-</div>
-
-  
-</div>
-
-
-<nav class="pagination">
-  
-  <ul>
-    
-    
-    <li><a href="#" class="disabled"><span aria-hidden="true">이전</span></a></li>
-    
-
-    
-    
-      <li><a href="#" class="disabled current">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-      <li><a href="/page2/">2</a></li>
-    
-
-    
-    
-      <li><a href="/page2/">다음</a></li>
-    
-  </ul>
-</nav>
-
 
 
   </div>

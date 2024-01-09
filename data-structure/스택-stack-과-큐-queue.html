@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>WarscoDev의 개발 블로그</title>
-<meta name="description" content="warscodev의 개발 블로그입니다.">
+<!-- begin _includes/seo.html --><title>스택(Stack)과 큐(Queue) - WarscoDev의 개발 블로그</title>
+<meta name="description" content="Abstract Data Type &amp; Data Structure">
 
 
   <meta name="author" content="warscodev">
   
+  <meta property="article:author" content="warscodev">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="WarscoDev의 개발 블로그">
-<meta property="og:title" content="WarscoDev의 개발 블로그">
-<meta property="og:url" content="https://warscodev.github.io/">
+<meta property="og:title" content="스택(Stack)과 큐(Queue)">
+<meta property="og:url" content="https://warscodev.github.io/data-structure/%EC%8A%A4%ED%83%9D-stack-%EA%B3%BC-%ED%81%90-queue">
 
 
-  <meta property="og:description" content="warscodev의 개발 블로그입니다.">
-
-
-
+  <meta property="og:description" content="Abstract Data Type &amp; Data Structure">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2022-05-19T00:00:00+09:00">
 
 
 
@@ -41,11 +45,9 @@
   
 
 
-<link rel="canonical" href="https://warscodev.github.io/">
+<link rel="canonical" href="https://warscodev.github.io/data-structure/%EC%8A%A4%ED%83%9D-stack-%EA%B3%BC-%ED%81%90-queue">
 
 
-
-  <link rel="next" href="https://warscodev.github.io/page2/">
 
 
 <script type="application/ld+json">
@@ -94,7 +96,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -143,8 +145,45 @@
 
 
 
+
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories#data-structure" itemprop="item"><span itemprop="name">Data structure</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">스택(Stack)과 큐(Queue)</li>
+      
+    
+  </ol>
+</nav>
+
+
+
+
 <div id="main" role="main">
-  
+    
   <div class="sidebar sticky">
   
 
@@ -356,24 +395,252 @@
 
 
 
-  <div class="archive">
+    <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+        
+        <meta itemprop="headline" content="스택(Stack)과 큐(Queue)">
+        
+        
+        <meta itemprop="description"
+              content="Abstract Data Type &amp; Data Structure">
+        
+        
+        <meta itemprop="datePublished" content="2022-05-19T00:00:00+09:00">
+        
+        
+
+        <div class="page__inner-wrap">
+            
+            <header>
+                
+                
+                
+                <!--<a href="/categoriesdata-structure" class="page__category">Data Structure</a>-->
+                <a href="/data-structure" class="page__category">Data Structure</a>
+                
+                
+
+                
+                <h1 id="page-title" class="page__title p-name" itemprop="headline">
+                    <a href="https://warscodev.github.io/data-structure/%EC%8A%A4%ED%83%9D-stack-%EA%B3%BC-%ED%81%90-queue" class="u-url" itemprop="url">스택(Stack)과 큐(Queue)
+</a>
+                </h1>
+                
+                
+
+  <p class="page__meta">
     
-      <h1 id="page-title" class="page__title"></h1>
+      
+      <span class="page__meta-date">
+        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
+        
+        <time datetime="2022-05-19T00:00:00+09:00">2022.05.19.</time>
+      </span>
     
+
     
 
-<h3 class="archive__subtitle">최근 포스트</h3>
+    
+  </p>
 
 
+            </header>
+            <hr>
+            
+
+            <section class="page__content e-content" itemprop="text">
+                
+                <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                        <header><h4 class="nav__title"><i class="fas fa-file-alt"></i>
+                            목차</h4></header>
+                        <ul class="toc__menu"><li><a href="#abstract-data-type--data-structure">Abstract Data Type &amp; Data Structure</a></li><li><a href="#stack-vs-queue">Stack vs Queue</a></li></ul>
+
+                    </nav>
+                </aside>
+                
+                <h2 id="abstract-data-type--data-structure">Abstract Data Type &amp; Data Structure</h2>
+
+<ul>
+  <li>
+    <p><strong>ADT(Abstract Data Type)</strong> : 추상 자료형. 개념적으로 어떤 동작이 있는지만 정의하고 구현에 대해서는 다루지 않음</p>
+  </li>
+  <li>
+    <p><strong>DS(Data Structure)</strong> : 자료구조. ADT에서 정의된 동작을 실제로 구현한 것</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="stack-vs-queue">Stack vs Queue</h2>
+
+<ul>
+  <li><strong>스택(Stack)</strong> : LIFO(Last In First Out) 형태로 데이터를 저장하는 구조. 나중에 들어간 것이 먼저 나옴.
+    <ul>
+      <li>주요 동작:
+        <ul>
+          <li>Push : 스택에 아이템을 넣음</li>
+          <li>Pop : 스택에서 아이템을 꺼냄</li>
+          <li>Peek : 스택 최상단의 아이템을 알아냄</li>
+        </ul>
+      </li>
+      <li>사용 사례 :
+        <ul>
+          <li>Stack Memory <a href="https://youtu.be/-2YpvLCT5F8?t=306">(영상)</a></li>
+          <li>Stack Frame</li>
+        </ul>
+      </li>
+      <li>관련 에러 및 해결
+        <ul>
+          <li>StackOverflowError : 스택 메모리 공간을 다 썼을 때 발생</li>
+          <li>대개 재귀 함수(recursive function)에서 탈출하지 못해서 발생</li>
+          <li>탈출 조건을 잘 확인하여 해결</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>큐(Queue)</strong>: FIFO(Fisrt In First Out) 형태로 데이터를 저장하는 구조. 먼저 들어간 것이 먼저 나옴.
+    <ul>
+      <li>주요 동작 :
+        <ul>
+          <li>Enqueue : 큐에 아이템을 넣음</li>
+          <li>Dequeue : 큐에서 아이템을 꺼냄</li>
+          <li>Peek : 꺼낼 아이템을 알아냄</li>
+        </ul>
+      </li>
+      <li>사용 사례 :
+        <ul>
+          <li>Producer/Consumer Architecture  <a href="https://youtu.be/-2YpvLCT5F8?t=418">(영상)</a></li>
+        </ul>
+      </li>
+      <li>기술 문서에서 Queue :
+        <ul>
+          <li>항상 FIFO를 의미 하지는 않음. (Ex.Priority Queue)</li>
+        </ul>
+      </li>
+      <li>관련 에러 및 해결
+        <ul>
+          <li>OutOfMemoryError : Java의 힙(heap) 메모리를 다 썼을 때 발생</li>
+          <li>큐에 데이터가 계속 쌓이기만 한 경우 발생</li>
+          <li>큐 사이즈를 고정하여 해결 <br />
+            <ul>
+              <li>큐가 다 찼다면? :
+                <ol>
+                  <li>예외 던지기</li>
+                  <li>특별한 값(null or false)을 반환</li>
+                  <li>성공할 때까지 스레드 블락(대기)</li>
+                  <li>제한된 시간동안 블락하고 안되면 제외(Time out)
+  <br />ex) LinkedBlockingQueue</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<p>참고 자료 :</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=-2YpvLCT5F8">https://www.youtube.com/watch?v=-2YpvLCT5F8</a></li>
+</ul>
 
 
-<div class="entries-list">
+                
+            </section>
+
+            <footer class="page__meta">
+                
+                
   
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
     
+      <a href="/tags/#queue" class="page__taxonomy-item p-category" rel="tag">#Queue</a><span class="sep">, </span>
+    
+      <a href="/tags/#stack" class="page__taxonomy-item p-category" rel="tag">#Stack</a>
+    
+    </span>
+  </p>
 
 
 
-<div class="list__item">
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <!-- href default : /categories#data-structure -->
+      <a href="/categoriesdata-structure" class="page__taxonomy-item p-category" rel="tag">Data Structure</a><span></span>
+    
+    </span>
+  </p>
+
+
+                
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-05-19T00:00:00+09:00">2022.05.19.</time></p>
+
+            </footer>
+
+            <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%8A%A4%ED%83%9D%28Stack%29%EA%B3%BC+%ED%81%90%28Queue%29%20https%3A%2F%2Fwarscodev.github.io%2Fdata-structure%2F%25EC%258A%25A4%25ED%2583%259D-stack-%25EA%25B3%25BC-%25ED%2581%2590-queue" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwarscodev.github.io%2Fdata-structure%2F%25EC%258A%25A4%25ED%2583%259D-stack-%25EA%25B3%25BC-%25ED%2581%2590-queue" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+</section>
+
+
+            
+  <nav class="pagination">
+    
+      <a href="/spring-data/jpa-%EC%98%81%EC%86%8D%EC%84%B1-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%A0%95%EB%A6%AC" class="pagination--pager" title="JPA 영속성 컨텍스트 정리
+">이전</a>
+    
+    
+      <a href="/data-structure/linked-list" class="pagination--pager" title="Linked list
+">다음</a>
+    
+  </nav>
+
+        </div>
+
+        
+    </article>
+
+    
+    
+    <div class="page__related">
+        <h2 class="page__related-title">참고</h2>
+        <div class="grid__wrapper">
+            
+            
+
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
 
     
@@ -417,12 +684,12 @@
   </article>
 </div>
 
-  
-    
+            
+            
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
 
     
@@ -464,12 +731,12 @@
   </article>
 </div>
 
-  
-    
+            
+            
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
 
     
@@ -511,12 +778,12 @@
   </article>
 </div>
 
-  
-    
+            
+            
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
 
     
@@ -563,96 +830,11 @@
   </article>
 </div>
 
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-
-    
-
+            
+        </div>
+    </div>
     
     
-    <!--<a class="archive__item-category" href="/categoriesdata-structure">Data Structure</a>-->
-    <a class="archive__item-category" href="/data-structure">Data Structure</a>
-    
-    
-
-
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/data-structure/%EC%8A%A4%ED%83%9D-stack-%EA%B3%BC-%ED%81%90-queue" rel="permalink">스택(Stack)과 큐(Queue)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
-        
-        <time datetime="2022-05-19T00:00:00+09:00">2022.05.19.</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Abstract Data Type &amp; Data Structure
-</p>
-  </article>
-</div>
-
-  
-</div>
-
-
-<nav class="pagination">
-  
-  <ul>
-    
-    
-    <li><a href="#" class="disabled"><span aria-hidden="true">이전</span></a></li>
-    
-
-    
-    
-      <li><a href="#" class="disabled current">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-      <li><a href="/page2/">2</a></li>
-    
-
-    
-    
-      <li><a href="/page2/">다음</a></li>
-    
-  </ul>
-</nav>
-
-
-
-  </div>
 </div>
     </div>
 

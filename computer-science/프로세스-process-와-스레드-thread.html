@@ -1,0 +1,955 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>프로세스(Process)와 스레드(Thread) - WarscoDev의 개발 블로그</title>
+<meta name="description" content="1. Program    어떤 작업을 위해 실행할 수 있는 파일 (An executable file)">
+
+
+  <meta name="author" content="warscodev">
+  
+  <meta property="article:author" content="warscodev">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="WarscoDev의 개발 블로그">
+<meta property="og:title" content="프로세스(Process)와 스레드(Thread)">
+<meta property="og:url" content="https://warscodev.github.io/computer-science/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-process-%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C-thread">
+
+
+  <meta property="og:description" content="1. Program    어떤 작업을 위해 실행할 수 있는 파일 (An executable file)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-05-16T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://warscodev.github.io/computer-science/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-process-%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C-thread">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "warscodev",
+      "url": "https://warscodev.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="WarscoDev의 개발 블로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          WarscoDev의 개발 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories">Category</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories#computer-science" itemprop="item"><span itemprop="name">Computer science</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">프로세스(Process)와 스레드(Thread)</li>
+      
+    
+  </ol>
+</nav>
+
+
+
+
+<div id="main" role="main">
+    
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://warscodev.github.io/" itemprop="url">warscodev</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, South Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:warscodev@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="warscodev@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://instagram.com/warsco09" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/warscodev" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/computer-science/"><span class="nav__sub-title">Computer Science</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/algorithm/"><span class="nav__sub-title">Algorithm</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/data-structure/"><span class="nav__sub-title">Data Structure</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/server/"><span class="nav__sub-title">Server</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/vcs/"><span class="nav__sub-title">VCS</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/spring-data"><span class="nav__sub-title">Spring Data</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/template-engine/"><span class="nav__sub-title">Template Engine</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/etc/"><span class="nav__sub-title">Etc.</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+    <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+        
+        <meta itemprop="headline" content="프로세스(Process)와 스레드(Thread)">
+        
+        
+        <meta itemprop="description"
+              content="1. Program  어떤 작업을 위해 실행할 수 있는 파일 (An executable file)">
+        
+        
+        <meta itemprop="datePublished" content="2022-05-16T00:00:00+09:00">
+        
+        
+
+        <div class="page__inner-wrap">
+            
+            <header>
+                
+                
+                
+                <!--<a href="/categoriescomputer-science" class="page__category">Computer Science</a>-->
+                <a href="/computer-science" class="page__category">Computer Science</a>
+                
+                
+
+                
+                <h1 id="page-title" class="page__title p-name" itemprop="headline">
+                    <a href="https://warscodev.github.io/computer-science/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-process-%EC%99%80-%EC%8A%A4%EB%A0%88%EB%93%9C-thread" class="u-url" itemprop="url">프로세스(Process)와 스레드(Thread)
+</a>
+                </h1>
+                
+                
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
+        
+        <time datetime="2022-05-16T00:00:00+09:00">2022.05.16.</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+            </header>
+            <hr>
+            
+
+            <section class="page__content e-content" itemprop="text">
+                
+                <aside class="sidebar__right sticky">
+                    <nav class="toc">
+                        <header><h4 class="nav__title"><i class="fas fa-file-alt"></i>
+                            목차</h4></header>
+                        <ul class="toc__menu"><li><a href="#1-program">1. Program</a></li><li><a href="#2-process">2. Process</a></li><li><a href="#3-thread">3. Thread</a></li><li><a href="#4-process-vs-thread">4. Process vs Thread</a></li><li><a href="#5-multiprocessing-multithread">5. Multiprocessing, Multithread</a></li><li><a href="#6-동시성concurrency-vs-병렬성parallelism">6. 동시성(Concurrency) vs 병렬성(Parallelism)</a></li><li><a href="#7-multitasking">7. Multitasking</a></li><li><a href="#8-context-switching">8. Context Switching</a></li><li><a href="#9-multiprocessing">9. Multiprocessing</a></li><li><a href="#10-multithread">10. Multithread</a></li></ul>
+
+                    </nav>
+                </aside>
+                
+                <h2 id="1-program">1. Program</h2>
+<ul>
+  <li>어떤 작업을 위해 실행할 수 있는 파일 (An executable file)</li>
+</ul>
+
+<h2 id="2-process">2. Process</h2>
+<ul>
+  <li>실행중인 프로그램 (Computer program in execution)</li>
+  <li>프로세스가 동작한다는 것은 프로세스의 특정 스레드가 실행중이라는 것.<br />
+  그 스레드는 프로세스가 가진 데이터를 참조함.
+<br /></li>
+  <li><strong>구성</strong>
+    <ul>
+      <li>Register: 명령, 주소 등을 가지고 있는 부분</li>
+      <li>Counter: 프로그램 안에서 어느 위치를 실행시키고 있는 지를 가르키는 부분</li>
+      <li><strong>Stack</strong>: 프로세스의 메모리 공간을 관리하기 위한 알고리즘중 하나. 호출된 함수, 지역 변수 등의 임시 데이터</li>
+      <li><strong>Heap</strong>: 동적으로 생성된 데이터 영역(ex. new Object(), malloc(), …)
+        <ul>
+          <li>스택보다 할당할 수 있는 메모리 공간이 많다는 것이 장점이지만 포인터로 메모리 영역을 접근해야 하기 때문에 다른 자료구조에 비해서 데이터를 읽고 쓰는게 느리다.</li>
+        </ul>
+      </li>
+      <li><strong>Code</strong>: 프로세스가 실행할 코드와 매크로 상수가 기계어의 형태로 저장된 공간</li>
+      <li><strong>Data</strong>: 전역변수 또는 static 변수 등이 저장된 공간.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="3-thread">3. Thread</h2>
+<ul>
+  <li><strong>프로세스 내에서 실행되는 작업 흐름의 단위.</strong> (The unit of execution within a process)</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="4-process-vs-thread">4. Process vs Thread</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Process</th>
+      <th>Thread</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>개념</strong></td>
+      <td>실행 중인 프로그램</td>
+      <td>프로세스의 실행 단위</td>
+    </tr>
+    <tr>
+      <td><strong>종료</strong></td>
+      <td>시간 소요 ↑</td>
+      <td>시간 소요 ↓</td>
+    </tr>
+    <tr>
+      <td><strong>생성</strong></td>
+      <td>시간 소요 ↑</td>
+      <td>시간 소요 ↓</td>
+    </tr>
+    <tr>
+      <td><strong>Context switching</strong></td>
+      <td>시간 소요 ↑</td>
+      <td>시간 소요 ↓</td>
+    </tr>
+    <tr>
+      <td><strong>커뮤니케이션</strong></td>
+      <td>효율성 ↓</td>
+      <td>효율성 ↑</td>
+    </tr>
+    <tr>
+      <td><strong>리소스</strong></td>
+      <td>소비 ↑</td>
+      <td>소비 ↓</td>
+    </tr>
+    <tr>
+      <td><strong>자원 공유</strong></td>
+      <td>독립, 격리</td>
+      <td>공유(Heap, Data, Code)</td>
+    </tr>
+    <tr>
+      <td><strong>전환</strong></td>
+      <td>운영 체제의 인터페이스를 사용</td>
+      <td>운영 체제를 호출하지 않음(커널 중단 X)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="5-multiprocessing-multithread">5. Multiprocessing, Multithread</h2>
+<ul>
+  <li>CPU의 최대 활용을 위해 프로그램의 둘 이상의 부분을 동시에 실행하는 기술</li>
+</ul>
+
+<h2 id="6-동시성concurrency-vs-병렬성parallelism">6. 동시성(Concurrency) vs 병렬성(Parallelism)</h2>
+<ul>
+  <li>동시성 - 동시에 실행되는 것 같이 보이는 것. ex)싱글 코어 + 멀티 스레드</li>
+  <li>병렬성 - 실제로 동시에 여러 작업이 처리 되는 것. ex)멀티 코어 + 멀티 스레드</li>
+</ul>
+
+<h2 id="7-multitasking">7. Multitasking</h2>
+<ul>
+  <li>task를 번갈아가며 수행하는 것</li>
+  <li>프로세스의 응답 시간을 최소화 시키는데 목적</li>
+  <li>마치 동시에 여러 프로그램이 실행되는듯 느끼게함</li>
+  <li>하나의 프로세스가 동시에 여러 작업을 수행하지는 못함</li>
+</ul>
+
+<h2 id="8-context-switching">8. Context Switching</h2>
+<ul>
+  <li>CPU를 한 프로세스 또는 스레드에서 다른 프로세스 또는 스레드로 전환하는 것</li>
+  <li>프로세스 제어 블록(PCB)에서 현재 실행중인 프로세스의 상태(Context)를 먼저 저장하고, 다음 프로세스를 동작시켜 작업을 처리한 후에 이전에 저장된 프로세스의 상태를 다시 복구하여 재개</li>
+  <li>이를 통해 여러 프로세스가 단일 CPU를 공유</li>
+</ul>
+
+<h2 id="9-multiprocessing">9. Multiprocessing</h2>
+<ul>
+  <li>두개 이상의 프로세서나 코어가 작업을 병렬처리하는 것</li>
+  <li>각 프로세스가 메모리 영역을 따로 가지기 때문에 비효율이 발생</li>
+</ul>
+
+<h2 id="10-multithread">10. Multithread</h2>
+<ul>
+  <li>하나의 프로세스가 다수의 작업을 각각의 스레드를 이용하여 동시에 작동 시킬 수 있다</li>
+  <li>공유 메모리(Code, Data, Heap)를 가지기 때문에 서로간의 자원 공유가 가능하여 프로세스간 통신과 같은 과정을 거치지 않아 효율적이다</li>
+  <li>같은 데이터를 공유하기 때문에 데이터 동기화에 신경 써야 한다. 한 프로세스 안의 스레드가  문제가 생기면 같은 프로세스안의 다른 스레드도 문제가 발생하게 된다</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p>참고 자료 :</p>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=QmtYKZC0lMU">https://www.youtube.com/watch?v=QmtYKZC0lMU</a></li>
+  <li><a href="https://www.youtube.com/watch?v=RrfASw-jfZ4&amp;t=28s">https://www.youtube.com/watch?v=RrfASw-jfZ4&amp;t=28s</a></li>
+  <li><a href="https://www.youtube.com/watch?v=dzfij2nZbRw">https://www.youtube.com/watch?v=dzfij2nZbRw</a></li>
+  <li><a href="https://mangkyu.tistory.com/92">https://mangkyu.tistory.com/92</a></li>
+</ul>
+
+                
+            </section>
+
+            <footer class="page__meta">
+                
+                
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#process" class="page__taxonomy-item p-category" rel="tag">#Process</a><span class="sep">, </span>
+    
+      <a href="/tags/#thread" class="page__taxonomy-item p-category" rel="tag">#Thread</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <!-- href default : /categories#computer-science -->
+      <a href="/categoriescomputer-science" class="page__taxonomy-item p-category" rel="tag">Computer Science</a><span></span>
+    
+    </span>
+  </p>
+
+
+                
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-05-16T00:00:00+09:00">2022.05.16.</time></p>
+
+            </footer>
+
+            <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%28Process%29%EC%99%80+%EC%8A%A4%EB%A0%88%EB%93%9C%28Thread%29%20https%3A%2F%2Fwarscodev.github.io%2Fcomputer-science%2F%25ED%2594%2584%25EB%25A1%259C%25EC%2584%25B8%25EC%258A%25A4-process-%25EC%2599%2580-%25EC%258A%25A4%25EB%25A0%2588%25EB%2593%259C-thread" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwarscodev.github.io%2Fcomputer-science%2F%25ED%2594%2584%25EB%25A1%259C%25EC%2584%25B8%25EC%258A%25A4-process-%25EC%2599%2580-%25EC%258A%25A4%25EB%25A0%2588%25EB%2593%259C-thread" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+</section>
+
+
+            
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">이전</a>
+    
+    
+      <a href="/spring-data/jpa-%EC%98%81%EC%86%8D%EC%84%B1-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%A0%95%EB%A6%AC" class="pagination--pager" title="JPA 영속성 컨텍스트 정리
+">다음</a>
+    
+  </nav>
+
+        </div>
+
+        
+    </article>
+
+    
+    
+    <div class="page__related">
+        <h2 class="page__related-title">참고</h2>
+        <div class="grid__wrapper">
+            
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+
+    
+
+    
+    
+    <!--<a class="archive__item-category" href="/categoriesvcs">VCS</a>-->
+    <a class="archive__item-category" href="/vcs">VCS</a>
+    
+    
+
+
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/vcs/git-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%B8%ED%8C%85" rel="permalink">[Git] 1. 설치 및 세팅
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
+        
+        <time datetime="2023-05-25T00:00:00+09:00">2023.05.25.</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  💡 Git, Git Bash, SourceTree 설치 및 세팅
+
+</p>
+  </article>
+</div>
+
+            
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+
+    
+
+    
+    
+    <!--<a class="archive__item-category" href="/categoriesserver">Server</a>-->
+    <a class="archive__item-category" href="/server">Server</a>
+    
+    
+
+
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/server/ad-active-directory" rel="permalink">AD(Active Directory)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
+        
+        <time datetime="2022-06-14T00:00:00+09:00">2022.06.14.</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">중앙 서버에 공통된 데이터베이스를 생성하여 각 서버와 클라이언트가 해당 데이터베이스를 공유하여 Object를 검색하고,
+</p>
+  </article>
+</div>
+
+            
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+
+    
+
+    
+    
+    <!--<a class="archive__item-category" href="/categoriestemplate-engine">Template Engine</a>-->
+    <a class="archive__item-category" href="/template-engine">Template Engine</a>
+    
+    
+
+
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/template-engine/intellij%EC%97%90%EC%84%9C-thymeleaf-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%B3%80%EA%B2%BD-live-reload-%EC%A0%81%EC%9A%A9" rel="permalink">IntelliJ에서 Thymeleaf 실시간 변경(Live reload) 적용하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
+        
+        <time datetime="2022-05-27T00:00:00+09:00">2022.05.27.</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">서버를 재구동 하지 않고 Thymeleaf의 변경사항을 실시간으로 적용하는 방법을 알아보자.
+</p>
+  </article>
+</div>
+
+            
+            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+
+    
+
+    
+    
+    <!--<a class="archive__item-category" href="/categoriesdata-structure">Data Structure</a>-->
+    <a class="archive__item-category" href="/data-structure">Data Structure</a>
+    
+    
+
+
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/data-structure/linked-list" rel="permalink">Linked list
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <!--<i class="far fa-calendar-alt" aria-hidden="true"></i>-->
+        
+        <time datetime="2022-05-22T00:00:00+09:00">2022.05.22.</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  컴퓨터에 자료를 저장하는 구조의 한 종류로, 엘리먼트와 엘리먼트 간의 연결(link)을 이용해서 리스트를 구현한 것이다.
+  데이터를 저장한 노드에 다음 노드의 주소를 가지고 있는 구조.
+  일렬로 연결된 데이터를 저장할 때 사용
+  배열과 차이
+    
+      배열 : ...</p>
+  </article>
+</div>
+
+            
+        </div>
+    </div>
+    
+    
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/warscodev" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 warscodev. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
