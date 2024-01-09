@@ -9,7 +9,7 @@ tag : [Synchronization, Deadlock]
 
 
 
-# **동기화 (Synchronization)**
+# **📌동기화 (Synchronization)**
 
 ---
 
@@ -55,7 +55,7 @@ tag : [Synchronization, Deadlock]
 <br><br>
 
 
-# 교착상태 (Deadlock)
+# 📌교착상태 (Deadlock)
 
 ---
 
@@ -121,7 +121,7 @@ tag : [Synchronization, Deadlock]
 
 <br><br>
 
-# **동기화와 데드락**
+# **📌동기화와 데드락**
 
 ---
 
